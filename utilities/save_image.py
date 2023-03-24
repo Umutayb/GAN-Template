@@ -3,8 +3,8 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-from Rehoboam.properties import latent_dim
-from Rehoboam.Rehoboam import generator
+from rehoboam.properties import latent_dim
+from rehoboam.Rehoboam import generator
 
 try:
     os.mkdir("generated_images")
@@ -12,12 +12,10 @@ except FileExistsError:
     pass
 
 
-def save_imgs(epoch):
-    save_name = 0.00000000
+def save_imgs(epoch, save_name):
     r, c = 2, 2
     noise = np.random.normal(0, 1, (r * c, latent_dim))
     gen_imgs = generator.predict(noise)
-    save_name += 0.00000001
     # print("%.8f" % save_name)
 
     # Rescale images 0 - 1

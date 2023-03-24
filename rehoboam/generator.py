@@ -5,11 +5,11 @@ from keras.layers import Conv2D
 from keras.layers import Conv2DTranspose
 from keras.layers.activation import LeakyReLU
 
-from Rehoboam.properties import latent_dim
+from rehoboam.properties import latent_dim
 
 
 def build_generator():
-    model = Sequential()
+    model = Sequential(name="Dali")
 
     model.add(Dense(256 * 4 * 4, input_dim=latent_dim))
     model.add(LeakyReLU(alpha=0.2))

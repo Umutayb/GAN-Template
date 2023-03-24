@@ -1,7 +1,7 @@
 from keras.models import Sequential
 from keras.optimizers import Adam
-from Rehoboam.discriminator import build_discriminator
-from Rehoboam.generator import build_generator
+from rehoboam.discriminator import build_discriminator
+from rehoboam.generator import build_generator
 
 adam = Adam(lr=0.0002)
 
@@ -10,7 +10,7 @@ discriminator.compile(loss='binary_crossentropy', optimizer=adam, metrics=['accu
 
 generator = build_generator()
 
-Rehoboam = Sequential()
+Rehoboam = Sequential(name="Rehoboam")
 discriminator.trainable = False
 Rehoboam.add(generator)
 Rehoboam.add(discriminator)
