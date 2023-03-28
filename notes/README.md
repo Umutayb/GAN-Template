@@ -12,3 +12,7 @@ Install requirements
 ```shell
 pip install -r requirements.txt 
 ```
+Start training
+```shell
+python main.py
+```
